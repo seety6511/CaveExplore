@@ -8,6 +8,7 @@ namespace ConsoleEngine.Entitys
 {
     //콘솔창 전용 타일맵
     //StartPoint (sp) 를 0,0 으로 놓고 좌표계산이 된다.
+    //CellulaAutomata 로 생성된 맵을 받아서 여기서 관리한다.
     public class Tilemap : Entity
     {
         public int width;
@@ -27,7 +28,6 @@ namespace ConsoleEngine.Entitys
         public Tile[,] GetMap() => tiles;
         public Tile[] EmptyTiles
             => tiles.Cast<Tile>().Where(i => i.type == TileType.Empty && i.type != TileType.Wall).ToArray();
-
         void AttachTag(Tile t, Tag tag) => t.tag = tag;
         bool IsOutRange(Vector v)
             => v.x < 0 || v.y < 0 || v.x >= width || v.y >= height;
@@ -103,6 +103,7 @@ namespace ConsoleEngine.Entitys
             return x == 0 || y == 0 || x == width - 1 || y == height - 1;
         }
 
+        //모든 타일의 8방향으로 이웃 타일을 추가
         //0:상단, 1: 우상단, 2:우측, 3:우하단, 4: 하단, 5:좌하단, 6:좌측, 7:좌상단
         public void FindNeighbors()
         {
@@ -161,6 +162,7 @@ namespace ConsoleEngine.Entitys
             Renderer.DrawTileMap(this);
         }
 
+        //모든 타일을 업데이트한다.
         public void UpdateALL()
         {
             foreach (var t in tiles)

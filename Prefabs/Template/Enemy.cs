@@ -124,7 +124,7 @@ namespace ConsoleEngine.Prefabs
                 return;
             }
 
-            var next = AStar.NextNode(Target, this);
+            var next = AIChaser.NextNode(Target, this);
             var e = GameManager.Instance.GetEntity(next);
             var t = GameManager.Instance.GetTilemap.GetTile(next);
 

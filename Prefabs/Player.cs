@@ -93,6 +93,7 @@ namespace ConsoleEngine.Prefabs
             }
         }
 
+        //플레이어가 가고자하는 다음타일 을 검사
         bool NextTileCheck(Vector pos)
         {
             var tile = map.GetTile(pos);
@@ -148,6 +149,8 @@ namespace ConsoleEngine.Prefabs
             GameManager.Instance.Battle(this, Target);
         }
 
+        //시야 밝히기.
+        //현재 플레이어의 시야 내부에 있는 tile의 isFog를 false 한다.
         public void Sight()
         {
             map.tiles[position.x, position.y].isFog = false;

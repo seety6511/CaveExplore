@@ -13,6 +13,10 @@ using System.Linq;
 
 namespace ConsoleEngine.GameSystems.Managers
 {
+    //싱글턴
+    //게임 흐름을 제어하는 매니저
+    //각 엔티티 생성 및 관리를 담당.
+    //대부분 각 엔티티의 메소드를 호출해오는 방식으로 작동.
     public class GameManager : Entity
     {
         Random r;
@@ -32,9 +36,9 @@ namespace ConsoleEngine.GameSystems.Managers
         public Entity GetEntity(Tag tag) => entities.Where(e => e.tag == tag).First();
         public Entity[] GetEntitys(Tag tag) => entities.Where(e => e.tag == tag).ToArray();
 
-        static int wallPercent;
-        static int mapWidth;
-        static int mapHeight;
+        int wallPercent;
+        int mapWidth;
+        int mapHeight;
         EnemyType nextEnemy;
 
         public GameManager(Scene _scene, int width, int height)

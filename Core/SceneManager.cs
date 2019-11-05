@@ -14,7 +14,9 @@ namespace ConsoleEngine.Core
     public static class SceneManager
     {
         public static int sceneId;
+        //현재 등록되어있는 SceneList
         public static List<Scene> SceneList;
+        //현재 실행중인(루프중인) Scene
         public static Scene nowRunningScene;
         public static SystemStatus systemStatus = SystemStatus.Init;
 

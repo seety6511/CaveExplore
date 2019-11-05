@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 
 namespace ConsoleEngine.Algorithm
 {
+    //미사용
+    /*
     public class CellularAutomata
     {
         private int[,] field;
@@ -233,16 +235,15 @@ namespace ConsoleEngine.Algorithm
             return field2;
         }
     }
-
-    //이 위엣라인 미사용
+*/
     //아래는 긁어온 코드 수정본.
     public class MapHandler
     {
         Random rand = new Random();
-
         public Tile[,] Map;
         public int MapWidth { get; set; }
         public int MapHeight { get; set; }
+        //벽이 전체에서 차지하는 비율
         public int PercentAreWalls { get; set; }
         public Tilemap tileMap;
         public MapHandler(int width, int height, int WallPercent = 40)
@@ -254,7 +255,6 @@ namespace ConsoleEngine.Algorithm
             RandomFillMap();
             tileMap = new Tilemap(width, height);
             tileMap.tiles = Map;
-            //Renderer.DrawTileMap(Map);
         }
 
         public void PrintMap()
@@ -276,7 +276,8 @@ namespace ConsoleEngine.Algorithm
             }
         }
 
-        public TileType PlaceWall(int x, int y)
+        //벽세우기
+        TileType PlaceWall(int x, int y)
         {
             int numWalls = GetAdjacentWalls(x, y, 1, 1);
             if (Map[x, y].type == TileType.Wall)
@@ -295,7 +296,8 @@ namespace ConsoleEngine.Algorithm
             return TileType.Empty;
         }
 
-        public int GetAdjacentWalls(int x, int y, int scopeX, int scopeY)
+        //셀룰러 오토마타의 현재 상태 체크.
+        int GetAdjacentWalls(int x, int y, int scopeX, int scopeY)
         {
             int startX = x - scopeX;
             int startY = y - scopeY;
@@ -316,6 +318,7 @@ namespace ConsoleEngine.Algorithm
             return wallCounter;
         }
 
+        //벽인가?
         bool IsWall(int x, int y)
         {
             // Consider out-of-bound a wall
@@ -328,6 +331,7 @@ namespace ConsoleEngine.Algorithm
             return false;
         }
 
+        //지정된 크기를 벗어나는지?
         bool IsOutOfBounds(int x, int y)
         {
             if (x < 0 || y < 0 || x > MapWidth - 1 || y > MapHeight - 1)
@@ -336,6 +340,7 @@ namespace ConsoleEngine.Algorithm
             return false;
         }
 
+        //빈맵으로 만들기
         public void BlankMap()
         {
             for (int row = 0; row < MapWidth; row++)
@@ -345,7 +350,8 @@ namespace ConsoleEngine.Algorithm
             }
         }
 
-        public void RandomFillMap()
+        //마구잡이로 채우기. 셀룰러 오토마타의 기본이 될 세포들을 놓는작업
+        void RandomFillMap()
         {
             int mapMiddle = 0; // Temp variable
             for (int row = 0; row < MapWidth; row++)

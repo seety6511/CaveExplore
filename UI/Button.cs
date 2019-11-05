@@ -25,6 +25,8 @@ namespace ConsoleEngine.UI
         public OnClickEvent2 oce2;
         public Entity connectEntity;
 
+
+        //void() delegate 생성자
         public Button(
             Vector _pos, 
             int _width, int _height, 
@@ -41,6 +43,8 @@ namespace ConsoleEngine.UI
             oce = clickEvent;
             selectPos = new Vector(Math.Max(0, _pos.x - 1), _pos.y);
         }
+
+        //null event
         public Button(
             Vector _pos,
             int _width, int _height,
@@ -56,6 +60,7 @@ namespace ConsoleEngine.UI
             selectPos = new Vector(Math.Max(0, _pos.x - 1), _pos.y);
         }
 
+        //void(string) delegate전용 생성자
         public Button(
             Vector _pos,
             int _width, int _height,

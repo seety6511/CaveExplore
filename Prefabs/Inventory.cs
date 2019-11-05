@@ -13,19 +13,23 @@ namespace ConsoleEngine.Prefabs
         int sx;
         int sy;
         int size;
-
         int row;
         int column;
         char cursor;
+        //현재 인벤토리를 조작중인가?
         bool isOpen;
+        //장비가 업데이트 되었는가?
         bool equipUpdate;
         int cellIndex;
+        //인벤토리에 새로운 내용이 올라왔는가?
         bool invenUpdate;
 
         Vector sp;
         Vector cellCursor;
+        //아이템이 들어있는 배열
         public Item[] bag;
 
+        //각 아이템이 인벤토리 안에서 가지는 좌표. 렌더링용.
         public Vector[] Cells
         {
             get
@@ -42,6 +46,8 @@ namespace ConsoleEngine.Prefabs
                 return list.ToArray();
             }
         }
+
+        //비어있는 가방을 찾음. 없으면 -1
         public int emptyBag
         {
             get
@@ -54,6 +60,8 @@ namespace ConsoleEngine.Prefabs
                 return -1;
             }
         }
+
+        //인벤토리 조작시 유효한 인덱스를 벗어나지 않도록 하는 프로퍼티
         private int CellIndex
         {
             get { return cellIndex; }

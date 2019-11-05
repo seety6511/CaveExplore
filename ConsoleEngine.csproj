@@ -46,7 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Algorithm\CellularAutomata.cs" />
-    <Compile Include="Algorithm\AStar.cs" />
+    <Compile Include="Algorithm\AIChaser.cs" />
     <Compile Include="Core\Entity.cs" />
     <Compile Include="Core\InputManager.cs" />
     <Compile Include="Core\Renderer.cs" />
@@ -84,7 +84,7 @@
     <Compile Include="Prefabs\Template\Struct\Equipment.cs" />
     <Compile Include="Prefabs\Template\Struct\Stat.cs" />
     <Compile Include="Prefabs\Template\Struct\Texture.cs" />
-    <Compile Include="Prefabs\Template\Window.cs" />
+    <Compile Include="UI\Window.cs" />
     <Compile Include="Prefabs\Weapon.cs" />
     <Compile Include="Textures\ActorTextures.cs" />
     <Compile Include="Textures\ItemTextures.cs" />

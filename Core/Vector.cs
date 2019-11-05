@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleEngine.Core
 {
+    //콘솔 상 2d 좌표계 전용 클래스.
     public class Vector
     {
         public int x;

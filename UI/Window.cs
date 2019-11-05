@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleEngine.Prefabs.Template
 {
+    //Window UI 추상화 클래스. 
     public class Window : Entity
     {
         //startPoint

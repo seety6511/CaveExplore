@@ -7,8 +7,6 @@ using System;
 
 namespace ConsoleEngine.Prefabs
 {
-
-
     public class Potion : Item
     {
         PotionType pType;

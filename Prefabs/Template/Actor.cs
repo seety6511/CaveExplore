@@ -11,6 +11,7 @@ using ConsoleEngine.Enums;
 
 namespace ConsoleEngine.Prefabs
 {
+    //액터 추상화 클래스.
     public abstract class Actor : Entity
     {
         public Stat stat;

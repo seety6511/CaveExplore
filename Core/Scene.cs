@@ -4,6 +4,8 @@ using ConsoleEngine.Enums;
 
 namespace ConsoleEngine.Core
 {
+    //Scene Template.
+    //각 씬마다 고유의 Instance를 갖고 자기만의 Enitity 들을 관리한다.
     public class Scene : Entity
     {
         public int sceneId;
@@ -79,8 +81,6 @@ namespace ConsoleEngine.Core
 
         public override void Rendering()
         {
-            if (SceneManager.systemStatus == SystemStatus.SceneChange)
-                return;
             RenderingPriority();
             foreach (var o in EntityList)
             {
@@ -97,6 +97,7 @@ namespace ConsoleEngine.Core
         public void AddEntity(Entity e)
             => addList.Add(e);
 
+        //내부적으로 삭제할 엔티티들이 이곳을 통해 삭제해야한다.
         public void RemoveEntity(Entity e)
             => removeList.Add(e);
 

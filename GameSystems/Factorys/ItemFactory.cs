@@ -7,6 +7,7 @@ using System.Linq;
 
 namespace ConsoleEngine.GameSystems.Factorys
 {
+    //Item 생성 전용 팩토리.
     public static class ItemFactory
     {
         public static Item CreatePotion(Vector pos, PotionType type)

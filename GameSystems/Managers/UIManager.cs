@@ -10,6 +10,10 @@ using System.Threading.Tasks;
 
 namespace ConsoleEngine.GameSystems.Managers
 {
+    //싱글턴
+    //UI전체 관리 클래스.
+    //여기서 모든 UI를 받아온다.
+    //특수 윈도우 외에는 각 하나의 Instance를 가진다.
     public class UIManager
     {
         Window[] InGameWindows;

@@ -7,8 +7,9 @@ using System.Linq;
 
 namespace ConsoleEngine.Algorithm
 {
-    public static class AStar
+    public static class AIChaser
     {
+        //자주 사용할 컨테이너들
         public static Tilemap map => GameManager.Instance.GetTilemap;
         public static List<Entity> list = new List<Entity>();
         public static List<Tile> tileList = new List<Tile>();
@@ -35,6 +36,5 @@ namespace ConsoleEngine.Algorithm
 
             return chaser.position;
         }
-
     }
 }

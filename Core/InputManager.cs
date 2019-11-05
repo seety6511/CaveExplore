@@ -7,6 +7,9 @@ using ConsoleEngine.UI;
 
 namespace ConsoleEngine.Core
 {
+    //입력값 전용으로 받는 클래스.
+    //현재 키보드 입력만 되게 해놓았음.
+    //주로 사용되는건 KeyBoardEvent, inputConsoleKey.
     public class InputManager
     {
         public static InputEvent.MOUSE_EVENT_RECORD MouseEvent;

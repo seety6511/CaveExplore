@@ -15,6 +15,8 @@ namespace ConsoleEngine.Core
         FULL
     }
 
+    //Rendering전용
+    //화면상에 무언가를 그리는데 필요한 단순한 메소드들 위주.
     public static class Renderer
     {
         //current cursor positions

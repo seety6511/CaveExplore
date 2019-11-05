@@ -8,6 +8,7 @@ using ConsoleEngine.Enums;
 
 namespace ConsoleEngine.Entitys
 {
+    //Tilemap의 구성원
     public class Tile : Entity
     {
         //안개에 가려져있나
@@ -19,7 +20,7 @@ namespace ConsoleEngine.Entitys
         //내구도
         public int durablity;
 
-        //타일의 상태변화
+        //타일의 상태 체크. 상태가 변한 타일들만 선별적으로 렌더링된다.
         public bool isUpdate;
         public Tile(int x, int y)
         {

@@ -4,6 +4,7 @@ using ConsoleEngine.GameSystems.Managers;
 
 namespace ConsoleEngine.Prefabs.Template
 {
+    //아이템 추상화 클래스.
     public abstract class Item : Entity
     {
         protected ItemType type;
