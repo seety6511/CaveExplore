@@ -29,6 +29,7 @@ namespace ConsoleEngine.GameSystems.Managers
         List<Entity> entities;
         MapHandler mapHandler;
         private static GameManager mInstance;
+        private GameManager() { }
 
         public Tilemap GetTilemap => map;
         public static GameManager Instance => mInstance;
