@@ -233,13 +233,14 @@ namespace ConsoleEngine.GameSystems.Managers
             Renderer.Render(loot.position, loot.dropSprite);
         }
 
+        //승리조건
         public override void Update()
         {
-            //if (player.killCount >= 2)
+            if (player.killCount >= 5)
                 nextEnemy = EnemyType.Orc;
 
-            //if (player.killCount / 5 == 1)
-                //GameOver(EndingType.Win);
+            if (player.killCount / 5 == 1)
+                GameOver(EndingType.Win);
         }
 
         void GameOver(EndingType type)
