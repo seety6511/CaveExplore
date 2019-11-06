@@ -43,7 +43,6 @@ namespace ConsoleEngine.Core
             updatePriority = 9;
             isAwake = true;
             isStart = true;
-            Active = false;
         }
         //이 엔티티가 생성되면 무조건 한 번 실행되는 메소드
         public virtual void Awake() { }

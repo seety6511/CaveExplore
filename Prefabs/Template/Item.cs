@@ -5,6 +5,7 @@ using ConsoleEngine.GameSystems.Managers;
 namespace ConsoleEngine.Prefabs.Template
 {
     //아이템 추상화 클래스.
+    //상호작용 가능하게는 해놓았으나 실제 게임내부에서 사용되는건 Read와 Use, Equip 세가지임.
     public abstract class Item : Entity
     {
         protected ItemType type;

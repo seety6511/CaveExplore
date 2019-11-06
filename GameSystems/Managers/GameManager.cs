@@ -234,6 +234,7 @@ namespace ConsoleEngine.GameSystems.Managers
         }
 
         //승리조건
+        //테스트용이라 단순 킬 카운트로 잡았음.
         public override void Update()
         {
             if (player.killCount >= 5)
